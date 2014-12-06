@@ -24,27 +24,10 @@
 <!-- Add your site or application content here -->
 <div class="container">
     <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <li class="active"><a ng-href="#">Home</a></li>
-            <li><a ng-href="#">About</a></li>
-            <li><a ng-href="#">Contact</a></li>
-        </ul>
         <h3 class="text-muted">angularBlogger</h3>
     </div>
 
-    <div ng-controller="MainCtrl">
-
-        <div ng-include="'views/main.html'"></div>
-
-        <div>
-            <ul>
-                <li ng-repeat="p in posts | orderBy: author">
-                    <a href="{{p.url}}"><b>{{p.author}}</b> ({{p.title}})</a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
+    <div ng-include="'views/reviewList.html'"></div>
 
     <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>

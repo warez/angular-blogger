@@ -10,12 +10,7 @@
 angular.module('angularBloggerApp')
     .controller('MainCtrl', function ($scope, ReviewClient, BASE_CONFIG) {
 
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
-
+        $scope.predicate = "author";
         $scope.posts = [];
 
         function searchFeedLink(feed) {
@@ -45,6 +40,8 @@ angular.module('angularBloggerApp')
 
         $scope.readPost = function(data) {
 
+            var posts = [];
+
             for (var i=0; i < data.feed.entry.length; i++) {
 
                 var feed = data.feed.entry[i];
@@ -54,8 +51,10 @@ angular.module('angularBloggerApp')
                     author: searchAuthor(feed)
                 };
 
-                $scope.posts.push(post);
+                posts.push(post);
             }
+
+            $scope.posts = posts;
         };
 
         ReviewClient.loadReview().$promise.then($scope.readPost);

@@ -1,5 +1,5 @@
 var config = {
-    "BLOG_URL" : "http://localhost:8000/app/mock",
+    "BLOG_URL" : "/app/mock",
     "MODE": "MOCK"
 };
 
