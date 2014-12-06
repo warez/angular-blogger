@@ -1,5 +1,7 @@
 var config = {
     "BLOG_URL" : "http://oncebookatime.blogspot.it",
+    "BY_TERM_URL_RESOURCE": "/feeds/posts/default/-/:term",
+    "REVIEW_TERM": "Recensioni",
     "MODE": "PROD"
 };
 

@@ -17,8 +17,8 @@ angular.module('angularBloggerApp')
     .service('ByTermService', function ($resource, URLHelpers) {
 
         var reviewService = $resource(
-            URLHelpers.getBlogUrl(), {term: '@term'}, {
-                loadData: { method: 'GET', params: {}, isArray: false }
+            URLHelpers.getBlogUrlResource(), {}, {
+                loadData: { method: 'GET', params: { alt : "json" , "max-results" : "999999" }, isArray: false }
             });
 
         return reviewService;

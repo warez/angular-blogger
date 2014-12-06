@@ -38,6 +38,20 @@ angular.module('angularBloggerApp')
 
         }
 
+        function cleanTitle(title, author) {
+
+            var indexN = title.toLowerCase().indexOf(author.toLowerCase());
+            if( indexN !== -1) {
+                title = title.substr(0, indexN - 1) + title.substr(indexN + author.length + 1);
+            }
+
+            title = title.trim();
+            title = title.replace("-", "");
+
+            return title;
+
+        }
+
         $scope.readPost = function(data) {
 
             var posts = [];
@@ -45,10 +59,15 @@ angular.module('angularBloggerApp')
             for (var i=0; i < data.feed.entry.length; i++) {
 
                 var feed = data.feed.entry[i];
+
+                var author = searchAuthor(feed);
+                var url = searchFeedLink(feed);
+                var title = cleanTitle(feed.title["$t"], author);
+
                 var post = {
-                    url : searchFeedLink(feed),
-                    title: feed.title["$t"],
-                    author: searchAuthor(feed)
+                    url : url,
+                    title: title,
+                    author: author
                 };
 
                 posts.push(post);

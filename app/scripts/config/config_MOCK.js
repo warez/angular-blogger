@@ -1,5 +1,7 @@
 var config = {
-    "BLOG_URL" : "/app/mock",
+    "BLOG_URL" : "/app",
+    "BY_TERM_URL_RESOURCE" : "/mock/:term",
+    "REVIEW_TERM": "recensioni.json",
     "MODE": "MOCK"
 };
 
