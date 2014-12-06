@@ -1,5 +1,5 @@
 var config = {
-    "BLOG_URL" : "https://oncebookatime.blogspot.it",
+    "BLOG_URL" : "http://oncebookatime.blogspot.it",
     "MODE": "PROD"
 };
 
