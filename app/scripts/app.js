@@ -9,8 +9,9 @@
  * Main module of the application.
  */
 angular
-  .module('angularBloggerApp', [
-    'ngAnimate',
-    'ngResource',
-    'ngSanitize'
-  ]);
+    .module('angularBloggerApp', [
+        'ngAnimate',
+        'ngResource',
+        'ngSanitize',
+        'ui.bootstrap'
+    ]);

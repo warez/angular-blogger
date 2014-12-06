@@ -1,7 +1,7 @@
-<div ng-controller="MainCtrl">
+<div id="reviewMain" ng-controller="MainCtrl">
 
 
-    <form class="bs-example bs-example-form" role="form">
+    <form id="reviewSearch" class="bs-example bs-example-form" role="form">
         <div class="input-group">
             <span class="input-group-addon">Cerca per autore:</span>
             <input class="form-control" ng-model="search.author" id="author" type="text"
@@ -16,10 +16,10 @@
         </div>
     </form>
 
-    <div ng-repeat="p in posts  | filter:search | orderBy:predicate | groupBy:['author']">
+    <div id="reviewList" ng-repeat="p in posts  | filter:search | orderBy:predicate | groupBy:['author']">
         <h2 ng-show="p.group_by_CHANGED">{{p.author}}</h2>
         <ul>
-            <a href="{{p.url}}">({{p.title}})</a>
+            <a href="{{p.url}}">{{p.title}}</a>
         </ul>
     </div>
 
